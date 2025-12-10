@@ -1,35 +1,51 @@
-import { useState } from 'react'
-import reactLogo from './assets/react.svg'
-import viteLogo from '/vite.svg'
-import './App.css'
+import React from 'react';
+import BasicCSS from './components/BasicCSS';
+import CSSModules from './components/CSSModules';
+import StyledComponents from './components/StyledComponents';
+import TailwindCSS from './components/TailwindCSS';
+import ConditionalStyling from './components/ConditionalStyling';
+import MaterialUI from './components/MaterialUI';
+import './App.css';
+import { Typography } from '@mui/material';
 
 function App() {
-  const [count, setCount] = useState(0)
-
   return (
-    <>
-      <div>
-        <a href="https://vite.dev" target="_blank">
-          <img src={viteLogo} className="logo" alt="Vite logo" />
-        </a>
-        <a href="https://react.dev" target="_blank">
-          <img src={reactLogo} className="logo react" alt="React logo" />
-        </a>
+    <div className="app">
+      <Typography variant="h5" component="h1" gutterBottom>
+        Demo Berbagai Metode Styling di React
+      </Typography>
+
+      <div className="demo-section">
+        <h2>1. Basic CSS</h2>
+        <BasicCSS />
       </div>
-      <h1>Vite + React</h1>
-      <div className="card">
-        <button onClick={() => setCount((count) => count + 1)}>
-          count is {count}
-        </button>
-        <p>
-          Edit <code>src/App.jsx</code> and save to test HMR
-        </p>
+
+      <div className="demo-section">
+        <h2>2. CSS Modules</h2>
+        <CSSModules />
       </div>
-      <p className="read-the-docs">
-        Click on the Vite and React logos to learn more
-      </p>
-    </>
-  )
+
+      <div className="demo-section">
+        <h2>3. Styled Components</h2>
+        <StyledComponents />
+      </div>
+
+      <div className="demo-section">
+        <h2>4. Tailwind CSS</h2>
+        <TailwindCSS />
+      </div>
+
+      <div className="demo-section">
+        <h2>5. Conditional Styling</h2>
+        <ConditionalStyling />
+      </div>
+
+      <div className="demo-section">
+        <h2>6. Material UI</h2>
+        <MaterialUI />
+      </div>
+    </div>
+  );
 }
 
-export default App
+export default App;
